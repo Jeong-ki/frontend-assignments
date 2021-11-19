@@ -1,0 +1,327 @@
+@charset "utf-8";
+
+body {
+  font-family: 'Noto Sans KR';
+  background: #EAE8FE;
+}
+
+#app {
+  width: 100vw;
+  height: 100vh;
+}
+
+/* 타이틀 */
+.tit-app {
+  margin: 0 auto;
+  font-size: 0;
+  width: 386px;
+  height: 180px;
+  background-image: url(../img/Logo_img.png);
+  background-size: contain;
+  margin-bottom: 67px;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+}
+
+/* 자판기 */
+.vending-machine {
+  background-color: white;
+  width: 306px;
+  height: 490px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 31px 27px 24px;
+  margin-right: 18px;
+}
+
+/* 자판기 아이템 */
+.vending-machine .list-item {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  
+}
+
+.vending-machine .list-item .item{
+  position: relative;
+  border: none;
+  border-radius: 10px;
+  width: 94px;
+  height: 130px;
+  font-size: 9px;
+  line-height: 13px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+/* 선택 시 JS로 choosed클래스 추가 */
+.vending-machine .list-item .choosed::before{
+  position: absolute;
+  content: '';
+  width: 89px;
+  height: 127px;
+  top: 0;
+  left: 0;
+  border: 3px solid #6327FE;
+  border-radius: 10px;
+}
+
+.vending-machine .list-item .sold-out::before{
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  border-radius: 10px;
+  background: no-repeat center / 58px 45px url(../img/Sold-out.png) rgba(0, 0, 0, 0.8);
+}
+
+.vending-machine .list-item .item button{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.vending-machine .list-item .item img{
+  width: 36px;
+  height: 65px;
+}
+.vending-machine .list-item .item strong{
+  margin: 7px 0;
+}
+.vending-machine .list-item .item span{
+  width: 70px;
+  height: 22px;
+  background: #6327FE;
+  border-radius: 50px;
+  color: #FFFFFF;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.vending-machine .cont-return, .vending-machine .cont-put {
+  display: flex;
+  justify-content: space-between;
+  width: 306px;
+  height: 33px;
+}
+.vending-machine .cont-return {
+  padding: 20px 27px 12px;
+}
+
+.vending-machine .cont-return .info-balance {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  width: 180px;
+  height: 33px;
+  background: #EAE8FE;
+  border-radius: 5px;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.vending-machine .cont-return .btn-return, .cont-put .btn-put {
+  width: 94px;
+  height: 33px;
+  background: #FFFFFF;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  border-radius: 5px;
+}
+
+.vending-machine .cont-put .inp-put{
+  padding-left: 6px;
+  width: 200px;
+  height: 33px;
+  border-radius: 5px;
+  font-weight: 500;
+  font-size: 14px;
+  border: 1px solid #BDBDBD;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.vending-machine .cont-get {
+  display: flex;
+  justify-content: space-between;
+  width: 306px;
+  height: 106px;
+  margin-top: 11px;
+}
+
+.vending-machine .cont-get .list-item-staged,
+.my-info .cont-myitems .list-item-staged {
+  background-color: #EAE8FE;;
+  width: 200px;
+  height: 106px;
+  padding: 12px 12px 18px 12px;
+  border: 1px solid #BDBDBD;
+  box-sizing: border-box;
+  border-radius: 5px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.vending-machine .cont-get .list-item-staged::-webkit-scrollbar,
+.my-info .cont-myitems .list-item-staged::-webkit-scrollbar {
+  width: 4px;
+  height: 79px;
+}
+.vending-machine .cont-get .list-item-staged::-webkit-scrollbar-thumb,
+.my-info .cont-myitems .list-item-staged::-webkit-scrollbar-thumb {
+  background-color: #FFFFFF;
+}
+.vending-machine .cont-get .list-item-staged .item-stage,
+.my-info .cont-myitems .list-item-staged .item-stage {
+  position: relative;
+  background-color: #FFFFFF;
+  width: 170px;
+  height: 46px;
+  border-radius: 5px;
+  margin-top: 6px;
+}
+.vending-machine .cont-get .list-item-staged .item-stage .img-item,
+.my-info .cont-myitems .list-item-staged .item-stage .img-item {
+  margin: 6px 10px 7px;
+  width: 18px;
+  height: 33px;
+}
+.vending-machine .cont-get .list-item-staged .item-stage .txt-item,
+.my-info .cont-myitems .list-item-staged .item-stage .txt-item {
+  position: absolute;
+  left: 38px;
+  top: 18px;
+  font-size: 9px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 13px;
+  letter-spacing: 0em;
+}
+.vending-machine .cont-get .list-item-staged .item-stage .num-counter,
+.my-info .cont-myitems .list-item-staged .item-stage .num-counter {
+  float: right;
+  display: block;
+  margin: 8px; 
+  width: 30px;
+  height: 30px;
+  border: 1px solid #BDBDBD;
+  box-sizing: border-box;
+  border-radius: 5px;
+  font-weight: 500;
+  font-size: 14px;
+  text-align: center;
+  line-height: 25px;
+}
+
+.cont-get .btn-get {
+  width: 94px;
+  height: 106px;
+  background: #6327FE;
+  border-radius: 5px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  color: #FFFFFF;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.my-info {
+  position: relative;
+  width: 360px;
+  height: 545px;
+  background-color: #FFFFFF;
+}
+
+.my-info .cont-mymoney {
+  background: #EAE8FE;
+  margin: 9px 27px;
+  width: 286px;
+  height: 32px;
+  border-radius: 5px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 30px;
+  padding: 0 10px;
+}
+
+.my-info .cont-mymoney .txt-money {
+  float: right;
+}
+
+.my-info .cont-mymoney::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 48px;
+  height: 20px;
+  width: 100%;
+  background-color: #EAE8FE;
+}
+
+.my-info .cont-myitems {
+  margin-top: 54px;
+  text-align: center;
+}
+
+.my-info .cont-myitems .txt-get {
+  font-size: 14px;
+}
+
+.my-info .cont-myitems .list-item-staged {
+  width: 306px;
+  height: 364px;
+  margin: 13px auto 6px;
+}
+
+.my-info .cont-myitems .list-item-staged .item-stage {
+  width: 276px;
+  height: 46px;
+}
+.my-info .cont-myitems .list-item-staged .item-stage .img-item{
+  float: left;
+}
+
+.my-info .cont-myitems .txt-total {
+  float: right;
+  margin-right: 30px;
+  font-size: 12px;
+}
+
+/* 모바일 화면 */
+@media screen 
+  and (min-device-width: 320px) /* 기기의 넓이가 320px 이상 */
+  and (max-device-width: 480px) /* 기기의 넓이가 480px 이하  */
+  and (-webkit-min-device-pixel-ratio: 2) /* 최소 1px 당 2개의 화소 */
+  {
+    #app {
+      background: white;
+    }
+    .tit-app {
+      position: relative;
+      font-size: 0;
+      width: 150px;
+      height: 71px;
+      background-repeat: no-repeat;
+      margin-bottom: 0;
+    }
+    main {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .my-info .cont-mymoney::after {
+      display: none;
+    }
+    
+  }
