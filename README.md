@@ -13,4 +13,4 @@
 
 ## 4. 밴딩머신
 
-<img src="https://user-images.githubusercontent.com/68384429/142657011-b6c2e5a8-843e-44af-95f9-651ebc290b1d.png" width="680">&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://user-images.githubusercontent.com/68384429/142657687-f459006d-20c3-4378-ba8b-0193e1d6efd5.png" width="145">
+<img src="https://user-images.githubusercontent.com/68384429/142659409-06fb31b2-1b50-4e75-bacc-cd3560af7923.png" width="600">&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://user-images.githubusercontent.com/68384429/142657687-f459006d-20c3-4378-ba8b-0193e1d6efd5.png" width="170">
